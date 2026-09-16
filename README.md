@@ -49,7 +49,3 @@ The launcher uses the browser file picker for audio and SRT files and downloads 
 
 - Website: [Bahaa-ai.com](https://bahaa-ai.com)
 - YouTube: [Bahaa Mahmoud YouTube channel](https://www.youtube.com/channel/UC8wDA7h1hPLfr5UrPnB9r8g/)
-
-## License
-
-No license has been selected for this repository yet. Add a license file before publishing if you want others to reuse or redistribute the project.
