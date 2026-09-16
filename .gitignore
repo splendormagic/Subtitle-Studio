@@ -1,0 +1,12 @@
+node_modules/
+
+__pycache__/
+*.py[cod]
+
+.DS_Store
+Thumbs.db
+
+# Local portable runtime and generated packaging output
+python/
+dist/
+release/

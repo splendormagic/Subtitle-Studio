@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subtitle Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">S</span><div><strong>Subtitle Studio</strong><small>Precision subtitle editing</small></div></div>
+    <div class="topbar-actions"><span class="developer-credit">Developed by : Bahaa Mahmoud | <a href="https://bahamahmoud.com" target="_blank" rel="noopener noreferrer">BahaaMahmoud.com</a> | <a href="https://bahaa-ai.com" target="_blank" rel="noopener noreferrer">Bahaa-ai.com</a></span><span class="version" id="app-version">v1.0.0</span><button class="button button-quiet" id="export-button" disabled>Export SRT <span>Ctrl E</span></button></div>
+  </header>
+
+  <main class="workspace">
+    <aside class="sidebar">
+      <div class="section-heading"><span>Project files</span><span class="status-dot"></span></div>
+      <button class="file-picker" id="audio-button"><span class="file-icon audio-icon">♪</span><span><b id="audio-name">Choose audio</b><small>MP3, WAV, M4A, FLAC, OGG</small></span><span class="plus">+</span></button>
+      <button class="file-picker" id="srt-button"><span class="file-icon srt-icon">T</span><span><b id="srt-name">Choose subtitles</b><small>SubRip .srt file</small></span><span class="plus">+</span></button>
+      <button class="load-button" id="load-button">Load timeline <span>↳</span></button>
+
+      <div class="sidebar-rule"></div>
+      <div class="section-heading"><span>Subtitle tools</span></div>
+      <button class="tool-button" id="split-button"><span>✂</span> Split at playhead <kbd>S</kbd></button>
+      <button class="tool-button" id="delete-button"><span>×</span> Delete selected <kbd>Del</kbd></button>
+      <button class="tool-button" id="undo-button"><span>↩</span> Undo last change <kbd>Ctrl Z</kbd></button>
+      <button class="tool-button" id="reset-button"><span>↶</span> Reset demo project</button>
+
+      <div class="sidebar-footer"><div class="keyboard-label">SHORTCUTS</div><p><kbd>Space</kbd> Play / pause</p><p><kbd>Ctrl</kbd> <kbd>E</kbd> Export SRT</p></div>
+    </aside>
+
+    <section class="editor">
+      <div class="editor-heading"><div><p class="eyebrow">TIMELINE / AUDIO SESSION</p><h1 id="project-title">Untitled session</h1></div><div class="session-meta"><span id="subtitle-count">0 subtitles</span><span class="meta-separator"></span><span id="audio-duration">00:00:00</span></div></div>
+      <div class="timeline-shell" id="timeline-shell">
+        <div class="timeline-content" id="timeline-content">
+          <div class="ruler" id="ruler"></div>
+          <div class="track-label subtitle-label">SUBTITLES</div>
+          <div class="subtitle-track" id="subtitle-track"><div class="empty-state" id="empty-state"><strong>Your timeline is ready</strong><span>Load an audio file and an SRT to begin editing.</span></div></div>
+          <div class="track-label waveform-label">WAVEFORM</div>
+          <div class="waveform-track"><canvas id="waveform"></canvas><div class="waveform-message" id="waveform-message">Load audio to generate waveform</div></div>
+          <div class="playhead" id="playhead"></div>
+        </div>
+      </div>
+      <div class="transport"><button class="play-button" id="play-button" type="button" aria-label="Load audio to play" title="Load audio to play">▶</button><span class="time-readout" id="current-time">00:00.000</span><input type="range" min="0" max="100" value="0" id="scrubber"><span class="time-readout muted" id="total-time">00:00.000</span><audio id="audio" preload="metadata"></audio></div>
+      <div class="inspector"><div class="inspector-title"><span>Selected subtitle</span><span id="selection-label">No selection</span></div><textarea id="subtitle-editor" placeholder="Select a subtitle block to edit its text..."></textarea><div class="inspector-hint">Changes are reflected on the timeline immediately.</div></div>
+    </section>
+  </main>
+  <footer class="bottombar"><span><i class="live-dot"></i><span id="backend-status">Local engine connected</span></span><span>Python + FFmpeg</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
