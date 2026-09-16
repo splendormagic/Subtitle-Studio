@@ -14,7 +14,7 @@ Subtitle Studio is a browser-based SRT subtitle editor for editing subtitle text
 - Undo for text, timing, split, and delete changes
 - Reset with confirmation
 - Browser-based editing with a Windows batch launcher
-- Uses Python and bundled FFprobe without Node.js or Electron
+- Uses Python and downloads the FFmpeg tools automatically when needed
 
 ## Requirements
 
@@ -24,11 +24,11 @@ Subtitle Studio is a browser-based SRT subtitle editor for editing subtitle text
 
 The application uses the `python` command from `PATH`. No Node.js, npm, Electron, or local package installation is required.
 
-FFprobe is already included in the project files at `ffmpeg/ffprobe.exe`; users do not need to install it separately.
+The launcher automatically downloads the FFmpeg tools from the project's [GitHub release](https://github.com/splendormagic/Subtitle-Studio/releases/download/v1.1.0/ffmpeg-tools.zip) the first time they are needed. Users do not need to install FFmpeg separately.
 
 ## Run in a browser
 
-Double-click [`Subtitle_Studio.bat`](Subtitle_Studio.bat). The launcher starts the local Python service and opens the editor at `http://127.0.0.1:47821` in the default browser. Keep the batch window open while using the editor.
+Double-click [`Subtitle_Studio.bat`](Subtitle_Studio.bat). On first launch, the launcher downloads the FFmpeg tools into the local `ffmpeg` folder, then starts the Python service and opens the editor at `http://127.0.0.1:47821` in the default browser. Keep the batch window open while using the editor.
 
 The launcher uses the browser file picker for audio and SRT files and downloads the edited SRT directly.
 
